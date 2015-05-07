@@ -24,10 +24,10 @@ start_link() ->
     gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
 
 uniform() ->
-    gen_server:call(rnd, uniform).
+    gen_server:call(?SERVER, uniform).
 
 uniform(N) ->
-    gen_server:call(rnd, {uniform, N}).
+    gen_server:call(?SERVER, {uniform, N}).
 
 %% ------------------------------------------------------------------
 %% gen_server Function Definitions
