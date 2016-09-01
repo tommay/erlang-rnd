@@ -34,7 +34,7 @@ uniform(N) ->
 %% ------------------------------------------------------------------
 
 init(_Args) ->
-    {ok, now()}.
+    {ok, rand:seed_s(exsplus)}.
 
 handle_call(uniform, _From, State) ->
     {R, State2} = rand:uniform_s(State),
