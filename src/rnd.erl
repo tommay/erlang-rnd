@@ -37,10 +37,10 @@ init(_Args) ->
     {ok, now()}.
 
 handle_call(uniform, _From, State) ->
-    {R, State2} = random:uniform_s(State),
+    {R, State2} = rand:uniform_s(State),
     {reply, R, State2};
 handle_call({uniform, N}, _From, State) ->
-    {R, State2} = random:uniform_s(N, State),
+    {R, State2} = rand:uniform_s(N, State),
     {reply, R, State2}.
 
 handle_cast(_Msg, State) ->
